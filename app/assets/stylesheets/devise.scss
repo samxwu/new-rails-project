@@ -1,0 +1,46 @@
+ /*********************************
+ CSS for devise/sessions/new view
+ **********************************/
+ 
+ .image { 
+   width: 100%; 
+   margin-top: 0px;
+}
+
+.top-text { 
+   position: absolute; 
+   top: 40%; 
+   left: 50%; 
+   width: 100%; 
+   line-height: 20px;
+}
+
+
+ .media-object {
+     margin-top: 5%;
+     width: 100%;
+     height: auto;
+ }
+
+.container {width: 100%; margin-bottom: 5%;}
+
+.column-left{ float: left; width: 33%; }
+.column-center{ display: inline-block; width: 33%; }
+.column-right{ float: right; width: 33%; }
+
+ /*********************************
+ CSS for devise/registration/new view
+ **********************************/
+ 
+.sign-up {
+    margin-left: 25%;
+}
+
+
+/*********************************
+ CSS for devise/registration/edit view
+ **********************************/
+ 
+.edit-regist {
+    margin-left: 25%;
+}
