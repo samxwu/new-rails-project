@@ -1,0 +1,8 @@
+<section class="pageIndent">
+    <h1><%= @wiki.title %></h1>
+    <%= link_to "Edit Wiki", edit_wiki_path(@wiki), class: 'btn btn-default' %>
+    <br>
+    <br>
+    
+    <p><%= @wiki.body %></p>
+</section>

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'about' => 'welcome#about'
 
   root 'welcome#index'
+  
+  resources :wikis
 
 
   # The priority is based upon order of creation: first created -> highest priority.
