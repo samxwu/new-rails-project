@@ -20,7 +20,7 @@ class WikisController < ApplicationController
         if @wiki.save
             redirect_to @wiki, notice: "Wiki was saved successfully."
         else
-            flash.now[:alert] = "Error creating topic. Please try again."
+            flash.now[:alert] = "Error creating Wiki topic. Please try again."
             render :new
         end
     end
@@ -31,6 +31,7 @@ class WikisController < ApplicationController
     
     def update
         @wiki = Wiki.find(params[:id])
+        authorize @wiki
         
         @wiki.title = params[:wiki][:title]
         @wiki.body = params[:wiki][:body]

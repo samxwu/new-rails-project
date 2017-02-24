@@ -11,6 +11,9 @@
 15.times do Wiki.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph)
 end
 
+15.times do Wiki.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, private: true)
+end
+
 wikis = Wiki.all
 
 puts "Seed finished"
