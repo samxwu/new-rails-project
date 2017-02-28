@@ -14,4 +14,10 @@ class ApplicationController < ActionController::Base
     redirect_to edit_wiki_path
   end
   
+  def change_plan(current_user)
+    updated_role = if current_user.role == 'standard' then 1 elsif current_user.role == 'premium' then 0 end 
+    User.where('email = ?', current_user.email).update_all(role: updated_role)
+  end
+
+  
 end

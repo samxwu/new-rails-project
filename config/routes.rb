@@ -1,16 +1,22 @@
 Rails.application.routes.draw do
   devise_for :users
+
   get 'welcome/index'
-
   #get 'welcome/about'
-  
-  #root 'welcome#index'
-
   get 'about' => 'welcome#about'
-
   root 'welcome#index'
   
   resources :wikis
+  
+  resources :charges, only: [:new, :create, :destroy] do
+    get '/thanks' => 'charges#thanks', as: :thanks
+    get '/goodbye' => 'charges#goodbye', as: :goodbye
+  end
+  
+  
+  #get 'thanks', to: 'charges#thanks', as: 'thanks'
+  #post '/up-vote' => 'votes#up_vote', as: :up_vote
+  #post '/down-vote' => 'votes#down_vote', as: :down_vote
 
 
   # The priority is based upon order of creation: first created -> highest priority.
