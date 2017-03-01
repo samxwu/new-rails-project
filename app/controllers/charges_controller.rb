@@ -28,7 +28,8 @@ def create
 
  flash[:notice] = "Thanks for upgrading, #{current_user.email}!"
 
- redirect_to charge_thanks_path(current_user)
+ #redirect_to charge_thanks_path(current_user)
+  redirect_to wikis_path
 
 rescue Stripe::CardError => e
   flash[:error] = e.message
@@ -37,15 +38,18 @@ end
 
 def destroy
   change_plan(current_user)
-  flash[:notice] = "Your plan has been downgraded, #{current_user.email}."
-  redirect_to charge_goodbye_path(current_user)
+  flash[:alert] = "Your plan has been downgraded, #{current_user.email}."
+  redirect_to wikis_path
+  #redirect_to charge_goodbye_path(current_user)
 end
+
 
 def thanks
 end
 
 def goodbye
 end
+ 
  
 private
 

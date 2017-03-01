@@ -1,6 +1,8 @@
 <section class="pageIndent">
     <h1><%= @wiki.title %></h1>
-    <%= link_to "Edit Wiki", edit_wiki_path(@wiki), class: 'btn btn-default' %>
+    <% if current_user.admin? || current_user.premium? || @wiki.private? == false %>
+        <%= link_to "Edit Wiki", edit_wiki_path(@wiki), class: 'btn btn-default' %>
+    <% end %>
     <br>
     <br>
     
