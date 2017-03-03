@@ -19,8 +19,24 @@
          <%= f.label :body %>
          <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>
        </div>
-       
+
        <%= render partial: 'form', locals: {f: f} %>
+       
+            
+      <div class="form-group">
+         <%= label(:add_collaborators, 'Add Collaborators') %>
+          <p>Add collaborators by typing in the collaborator's email address. To add multiple collaborators, separate emails with "<strong>;</strong>".</p>
+          <br>
+         <%= text_area_tag :add_collaborators,  @add_collaborators, :size =>"100x2.5" %>
+      </div>
+      
+      <div class="form-group">
+         <%= label(:remove_collaborators, 'Remove Collaborators') %>
+          <p>Remove collaborators by typing in the collaborator's email address. To remove multiple collaborators, separate emails with "<strong>;</strong>".</p>
+          <br>
+         <%= text_area_tag :remove_collaborators,  @remove_collaborators, :size =>"100x2.5" %>
+      </div>
+         
        
        <%= f.submit "Save", class: 'btn btn-default' %>
      <% end %>

@@ -44,13 +44,6 @@ def destroy
 end
 
 
-def thanks
-end
-
-def goodbye
-end
- 
- 
 private
 
 class Amount
